@@ -17,6 +17,7 @@ import Tracks from './pages/Tracks';
 import StoreUrls from './pages/Store_url';
 import Statements from './pages/Statements';
 import ReleaseUserDeclaration from './pages/Release_declaration';
+import Releases from './pages/Releases';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="store-urls" element={<StoreUrls />} />
           <Route path="statements" element={<Statements />} />
           <Route path="release-user-declaration" element={<ReleaseUserDeclaration />} />
+          <Route path="releases" element={<Releases/>} />
         </Route>
       </Routes>
     </Router>

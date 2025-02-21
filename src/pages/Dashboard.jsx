@@ -91,7 +91,10 @@ function Dashboard() {
               </Link>
             </li>
             <li className="mb-4">
-              <Link to="/dashboard/featurerequests" className="hover:text-gray-400">
+              <Link
+                to="/dashboard/featurerequests"
+                className="hover:text-gray-400"
+              >
                 Feature Requests
               </Link>
             </li>
@@ -116,11 +119,19 @@ function Dashboard() {
               </Link>
             </li>
             <li className="mb-4">
-              <Link to="/dashboard/release-user-declaration" className="hover:text-gray-400">
+              <Link
+                to="/dashboard/release-user-declaration"
+                className="hover:text-gray-400"
+              >
                 Release User Declarations
               </Link>
             </li>
-            </ul>
+            <li className="mb-4">
+              <Link to="/dashboard/releases" className="hover:text-gray-400">
+                Releases
+              </Link>
+            </li>
+          </ul>
         </nav>
       </div>
 
