@@ -10,7 +10,7 @@ import {
 
 // Create an Axios instance
 const apiClient = axios.create({
-  baseURL: 'http://localhost:3001/api/v1/', // Replace with your API base URL
+  baseURL: 'https://move-music-server.vercel.app/api/v1/', // Replace with your API base URL
   headers: {
     'Content-Type': 'application/json',
   },
