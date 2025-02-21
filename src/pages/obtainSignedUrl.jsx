@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 import apiClient from "../utils/apiClient";
 
 const UploadFile = () => {
@@ -8,6 +7,7 @@ const UploadFile = () => {
     const [error, setError] = useState(null);
     const [successMessage, setSuccessMessage] = useState("");
     const [loading, setLoading] = useState(false);
+    const [signedUrlData, setSignedUrlData] = useState(null);
     const accessToken = localStorage.getItem("accessToken");
 
     const validUploadTypes = {
@@ -21,6 +21,7 @@ const UploadFile = () => {
     const handleFileChange = (event) => {
         setFile(event.target.files[0]);
         setError(null);
+        setSignedUrlData(null); // Reset previous signed URL when a new file is selected
     };
 
     const handleUpload = async () => {
@@ -50,37 +51,23 @@ const UploadFile = () => {
         setSuccessMessage("");
 
         try {
-            const response = await apiClient.get(
-                `/obtain-signed-url-for-upload/`,
-                {
-                    params: {
-                        filename: file.name,
-                        filetype: file.type,
-                        upload_type: uploadType,
-                    },
-                    headers: {
-                        Authorization: `Bearer ${accessToken}`,
-                    },
-                }
-            );
-            console.log(response.data);
-            
-
-            const { signed_url } = response.data;
-            const formData = new FormData();
-            Object.keys(signed_url.fields).forEach((key) => {
-                formData.append(key, signed_url.fields[key]);
-            });
-            formData.append("file", file);
-
-            await axios.post(signed_url.url, formData, {
-                headers: { "Content-Type": "multipart/form-data" },
+            const response = await apiClient.get("/obtain-signed-url-for-upload/", {
+                params: {
+                    filename: file.name,
+                    filetype: file.type,
+                    upload_type: uploadType,
+                },
+                headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                },
             });
 
-            setSuccessMessage("File uploaded successfully!");
+            console.log(response.data); // Debugging
+            setSignedUrlData(response.data); // Store the signed URL response to display
+            setSuccessMessage("Signed URL obtained successfully!");
         } catch (err) {
-            console.error("Upload error:", err);
-            setError("Failed to upload file. Please try again.");
+            console.error("Error obtaining signed URL:", err);
+            setError("Failed to obtain signed URL. Please try again.");
         } finally {
             setLoading(false);
         }
@@ -116,10 +103,23 @@ const UploadFile = () => {
                         className={`px-4 py-2 rounded-lg text-white ${loading ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"}`}
                         disabled={loading}
                     >
-                        {loading ? "Uploading..." : "Upload"}
+                        {loading ? "Fetching URL..." : "Get Signed URL"}
                     </button>
                 </div>
             </div>
+
+            {/* Display Signed URL Data */}
+            {signedUrlData && (
+                <div className="mt-6 p-4 border rounded-lg bg-gray-100">
+                    <h2 className="text-lg font-semibold">Signed URL Data:</h2>
+                    <p><strong>Upload URL:</strong> <a href={signedUrlData.url} className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">{signedUrlData.url}</a></p>
+                    <p><strong>Key:</strong> {signedUrlData.signed_url.fields.key}</p>
+                    <p><strong>Content-Type:</strong> {signedUrlData.signed_url.fields["Content-Type"]}</p>
+                    <p><strong>ACL:</strong> {signedUrlData.signed_url.fields.acl}</p>
+                    <p><strong>Policy:</strong> {signedUrlData.signed_url.fields.policy}</p>
+                    <p><strong>Signature:</strong> {signedUrlData.signed_url.fields.signature}</p>
+                </div>
+            )}
         </div>
     );
 };
