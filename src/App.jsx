@@ -5,6 +5,7 @@ import Contributors from './pages/Contributors';
 import Dashboard from './pages/Dashboard';
 import Delivery_Confirmation from './pages/Delivery-Confirmation';
 import User from './pages/Users';
+import Genres from './pages/Genres';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Artist />} />
           <Route path="contributors" element={<Contributors />} />
+          <Route path="genres" element={<Genres />} />
           <Route
             path="ddex-delivery-confirmations"
             element={<Delivery_Confirmation />}
