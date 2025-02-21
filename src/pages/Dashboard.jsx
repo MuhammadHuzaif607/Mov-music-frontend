@@ -95,12 +95,35 @@ function Dashboard() {
                 Feature Requests
               </Link>
             </li>
-            {/* Add more links as needed */}
-          </ul>
+            <li className="mb-4">
+              <Link to="/dashboard/trends" className="hover:text-gray-400">
+                Trends
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link to="/dashboard/tracks" className="hover:text-gray-400">
+                Tracks
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link to="/dashboard/store-urls" className="hover:text-gray-400">
+                Store urls
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link to="/dashboard/statements" className="hover:text-gray-400">
+                Statements
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link to="/dashboard/release-user-declaration" className="hover:text-gray-400">
+                Release User Declarations
+              </Link>
+            </li>
+            </ul>
         </nav>
       </div>
 
-      {/* Main Content */}
       <main className="flex-1 p-6 bg-gray-100">
         <Outlet />
       </main>
