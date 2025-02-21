@@ -60,6 +60,14 @@ function Dashboard() {
                 Genres
               </Link>
             </li>
+            <li className="mb-4">
+              <Link
+                to="/dashboard/contributorroles"
+                className="hover:text-gray-400"
+              >
+                Contributor Roles
+              </Link>
+            </li>
             {/* Add more links as needed */}
           </ul>
         </nav>

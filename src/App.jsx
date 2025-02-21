@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Delivery_Confirmation from './pages/Delivery-Confirmation';
 import User from './pages/Users';
 import Genres from './pages/Genres';
+import ContributorRoles from './pages/Contributor-roles';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             element={<Delivery_Confirmation />}
           />
           <Route path="users" element={<User />} />
+          <Route path="contributorroles" element={<ContributorRoles />} />
         </Route>
       </Routes>
     </Router>
