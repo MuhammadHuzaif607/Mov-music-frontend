@@ -52,6 +52,16 @@ function Dashboard() {
                 Delivery Confirmations
               </Link>
             </li>
+            <li className="mb-4">
+              <Link to="/dashboard/users" className="hover:text-gray-400">
+                Users
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link to="/dashboard/genres" className="hover:text-gray-400">
+                Genres 
+              </Link>
+            </li>
             {/* Add more links as needed */}
           </ul>
         </nav>
