@@ -7,6 +7,11 @@ import Delivery_Confirmation from './pages/Delivery-Confirmation';
 import User from './pages/Users';
 import Genres from './pages/Genres';
 import ContributorRoles from './pages/Contributor-roles';
+import Trends from './pages/Trends';
+import Tracks from './pages/Tracks';
+import StoreUrls from './pages/Store_url';
+import Statements from './pages/Statements';
+import ReleaseUserDeclaration from './pages/Release_declaration';
 
 function App() {
   return (
@@ -23,6 +28,11 @@ function App() {
           />
           <Route path="users" element={<User />} />
           <Route path="contributorroles" element={<ContributorRoles />} />
+          <Route path="trends" element={<Trends />} />
+          <Route path="tracks" element={<Tracks />} />
+          <Route path="store-urls" element={<StoreUrls />} />
+          <Route path="statements" element={<Statements />} />
+          <Route path="release-user-declaration" element={<ReleaseUserDeclaration />} />
         </Route>
       </Routes>
     </Router>
