@@ -9,6 +9,9 @@ import Genres from './pages/Genres';
 import ContributorRoles from './pages/Contributor-roles';
 import SubGenres from './pages/SubGenres';
 import Labels from './pages/Labels';
+import UploadFile from './pages/obtainSignedUrl';
+import Publishers from './pages/Publishers';
+import FeatureRequests from './pages/Feature-request';
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
           <Route path="users" element={<User />} />
           <Route path="contributorroles" element={<ContributorRoles />} />
           <Route path="labels" element={<Labels />} />
+          <Route path="uploadFile" element={<UploadFile />} />
+          <Route path="publishers" element={<Publishers />} />
+          <Route path="featurerequests" element={<FeatureRequests />} />
         </Route>
       </Routes>
     </Router>

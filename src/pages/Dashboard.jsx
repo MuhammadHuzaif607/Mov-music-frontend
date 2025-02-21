@@ -80,6 +80,21 @@ function Dashboard() {
                 Labels
               </Link>
             </li>
+            <li className="mb-4">
+              <Link to="/dashboard/UploadFile" className="hover:text-gray-400">
+                Obtain signed url
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link to="/dashboard/publishers" className="hover:text-gray-400">
+                Publishers
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link to="/dashboard/featurerequests" className="hover:text-gray-400">
+                Feature Requests
+              </Link>
+            </li>
             {/* Add more links as needed */}
           </ul>
         </nav>
