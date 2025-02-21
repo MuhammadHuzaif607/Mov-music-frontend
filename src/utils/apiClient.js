@@ -64,12 +64,12 @@ apiClient.interceptors.response.use(
         } catch (refreshError) {
           // Handle refresh token failure (e.g., refresh token expired or invalid)
           removeTokens();
-          window.location.href = '/login'; // Redirect to login page
+          window.location.href = '/'; // Redirect to login page
           return Promise.reject(refreshError);
         }
       } else {
         // No refresh token available, redirect to login
-        window.location.href = '/login';
+        window.location.href = '/';
       }
     }
 
