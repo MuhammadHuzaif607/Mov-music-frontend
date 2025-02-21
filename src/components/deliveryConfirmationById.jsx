@@ -34,11 +34,14 @@ const DeliveryConfirmationById = () => {
         }
       );
 
-      console.log(response.data)
+      console.log(response.data);
       setConfirmation(response.data);
     } catch (err) {
-      setError('Failed to fetch delivery confirmation.');
-      console.error('Error fetching delivery confirmation:', err.response.data.detail);
+      setError(err.response.data.detail);
+      console.error(
+        'Error fetching delivery confirmation:',
+        err.response.data.detail
+      );
     } finally {
       setLoading(false);
     }
