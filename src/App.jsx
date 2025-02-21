@@ -4,6 +4,7 @@ import Artist from './pages/Artist'; // Import the Artist component
 import Contributors from './pages/Contributors';
 import Dashboard from './pages/Dashboard';
 import Delivery_Confirmation from './pages/Delivery-Confirmation';
+import User from './pages/Users';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             path="ddex-delivery-confirmations"
             element={<Delivery_Confirmation />}
           />
+          <Route path="users" element={<User />} />
         </Route>
       </Routes>
     </Router>
