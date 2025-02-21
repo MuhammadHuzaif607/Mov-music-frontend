@@ -7,6 +7,8 @@ import Delivery_Confirmation from './pages/Delivery-Confirmation';
 import User from './pages/Users';
 import Genres from './pages/Genres';
 import ContributorRoles from './pages/Contributor-roles';
+import SubGenres from './pages/SubGenres';
+import Labels from './pages/Labels';
 
 function App() {
   return (
@@ -17,12 +19,14 @@ function App() {
           <Route index element={<Artist />} />
           <Route path="contributors" element={<Contributors />} />
           <Route path="genres" element={<Genres />} />
+          <Route path="subgenres" element={<SubGenres />} />
           <Route
             path="ddex-delivery-confirmations"
             element={<Delivery_Confirmation />}
           />
           <Route path="users" element={<User />} />
           <Route path="contributorroles" element={<ContributorRoles />} />
+          <Route path="labels" element={<Labels />} />
         </Route>
       </Routes>
     </Router>

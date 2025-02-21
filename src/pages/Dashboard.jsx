@@ -46,6 +46,14 @@ function Dashboard() {
             </li>
             <li className="mb-4">
               <Link
+                to="/dashboard/contributorroles"
+                className="hover:text-gray-400"
+              >
+                Contributor Roles
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link
                 to="/dashboard/ddex-delivery-confirmations"
                 className="hover:text-gray-400"
               >
@@ -63,11 +71,13 @@ function Dashboard() {
               </Link>
             </li>
             <li className="mb-4">
-              <Link
-                to="/dashboard/contributorroles"
-                className="hover:text-gray-400"
-              >
-                Contributor Roles
+              <Link to="/dashboard/subgenres" className="hover:text-gray-400">
+                Sub-Genres
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link to="/dashboard/labels" className="hover:text-gray-400">
+                Labels
               </Link>
             </li>
             {/* Add more links as needed */}
