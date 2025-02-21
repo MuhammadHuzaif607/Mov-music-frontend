@@ -52,6 +52,8 @@ apiClient.interceptors.response.use(
               refresh: refreshToken,
             }
           );
+          console.log(response.data, 'middleware');
+          
 
           const { access } = response.data;
 
@@ -62,6 +64,8 @@ apiClient.interceptors.response.use(
           originalRequest.headers['Authorization'] = `Bearer ${access}`;
           return apiClient(originalRequest); // Retry original request with new token
         } catch (refreshError) {
+          console.log(refreshError, 'middleware');
+          
           // Handle refresh token failure (e.g., refresh token expired or invalid)
           removeTokens();
           window.location.href = '/'; // Redirect to login page
