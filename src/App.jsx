@@ -28,10 +28,7 @@ function App() {
           <Route path="contributors" element={<Contributors />} />
           <Route path="genres" element={<Genres />} />
           <Route path="subgenres" element={<SubGenres />} />
-          <Route
-            path="ddex-delivery-confirmations"
-            element={<Delivery_Confirmation />}
-          />
+          <Route path="ddex-delivery-confirmations" element={<Delivery_Confirmation />}/>
           <Route path="users" element={<User />} />
           <Route path="contributorroles" element={<ContributorRoles />} />
           <Route path="labels" element={<Labels />} />

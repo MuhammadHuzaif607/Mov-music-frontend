@@ -48,7 +48,7 @@ apiClient.interceptors.response.use(
         try {
           // Make a request to refresh the access token using the refresh token
           const response = await axios.post(
-            'http://localhost:3001/api/v1/auth/refresh-token',
+            'https://move-music-server.vercel.app/api/v1/auth/refresh-token',
             {
               refresh: refreshToken,
             }
