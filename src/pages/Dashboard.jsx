@@ -59,7 +59,7 @@ function Dashboard() {
             </li>
             <li className="mb-4">
               <Link to="/dashboard/genres" className="hover:text-gray-400">
-                Genres 
+                Genres
               </Link>
             </li>
             {/* Add more links as needed */}
