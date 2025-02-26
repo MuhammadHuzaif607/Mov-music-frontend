@@ -10,7 +10,7 @@ import {
 
 // Create an Axios instance
 const apiClient = axios.create({
-  baseURL: 'https://move-music-server.vercel.app/api/v1/', // Replace with your API base URL
+  baseURL: 'http://localhost:3001/api/v1/', // Replace with your API base URL
   headers: {
     'Content-Type': 'application/json',
   },
@@ -48,7 +48,7 @@ apiClient.interceptors.response.use(
         try {
           // Make a request to refresh the access token using the refresh token
           const response = await axios.post(
-            'https://move-music-server.vercel.app/api/v1/auth/refresh-token',
+            'http://localhost:3001/api/v1/auth/refresh-token',
             {
               refresh: refreshToken,
             }

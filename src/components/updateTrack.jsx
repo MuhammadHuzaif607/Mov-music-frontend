@@ -37,6 +37,7 @@ function UpdateTrack() {
           Authorization: `Bearer ${accessToken}`,
         },
       });
+      console.log(response.data)
       setTrack(response.data);
     } catch (err) {
       setError('Failed to fetch track details. Please check the track ID.');
